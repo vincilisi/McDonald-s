@@ -1,0 +1,344 @@
+[
+    {
+        "id": 1,
+        "category": "Burgers",
+        "name": "Big Mac",
+        "price": 4.99,
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202302_0005-999_BigMac_1564x1564-1?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 2,
+        "category": "Burgers",
+        "name": "Quarter Pounder®* with Cheese",
+        "price": 3.49,
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202201_0007-005_QuarterPounderwithCheese_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 3,
+        "category": "Burgers",
+        "name": "Cheeseburger",
+        "price": 2.49,
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202302_0003-999_CheeseburgerAlt_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 4,
+        "category": "Burgers",
+        "name": "Double Quarter Pounder®* with Cheese",
+        "price": 4,
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202201_3426-005_DoubleQuarterPounderwithCheese_1564x1564-1?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 5,
+        "category": "Burgers",
+        "name": "Quarter Pounder®* with Cheese Deluxe",
+        "price": 4.99,
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202309_4282_QuarterPounderCheeseDeluxe_Shredded_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 6,
+        "category": "Burgers",
+        "name": "McDouble®",
+        "price": 2.99,
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202302_0592-999_McDouble_Alt_1564x1564-1?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 7,
+        "category": "Burgers",
+        "name": "Daily Double",
+        "price": 3,
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202307_5101-999_DailyDouble_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 8,
+        "category": "Burgers",
+        "name": "Bacon Quarter Pounder®* with Cheese",
+        "price": 7,
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202201_4295-005_BaconQPC_1564x1564-1?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 9,
+        "category": "Burgers",
+        "price": 2,
+        "name": "Double Cheeseburger",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202411_0004-999_DoubleCheeseburger_Alt_McValue_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 10,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Coca-Cola®",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202402_0521_MediumCoke_ContourGlassv1_1564x1564?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202402_0521_MediumCoke_ContourGlassv1_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202402_0521_MediumCoke_ContourGlassv1_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202402_0521_MediumCoke_ContourGlassv1_1564x1564?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Sprite®",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_0721_MediumSprite_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_0721_MediumSprite_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_0721_MediumSprite_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_0721_MediumSprite_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Dr Pepper®",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_201905_0421_MediumDrPepper_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_201905_0421_MediumDrPepper_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_201905_0421_MediumDrPepper_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_201905_0421_MediumDrPepper_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Fanta® Orange",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_1262_MediumFantaOrange_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_1262_MediumFantaOrange_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_1262_MediumFantaOrange_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202212_1262_MediumFantaOrange_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Diet Coke®",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202112_0652_MediumDietCoke_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202112_0652_MediumDietCoke_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202112_0652_MediumDietCoke_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202112_0652_MediumDietCoke_Glass_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "category": "Beverages",
+        "price": 2.80,
+        "name": "Hi-C® Orange Lavaburst®",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0621_MediumHi-COrange_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "extra-small",
+                "price": 1,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202206_ExtraSmall12ozDrink_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Small",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0621_MediumHi-COrange_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 2.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0621_MediumHi-COrange_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0621_MediumHi-COrange_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "category": "Beverages",
+        "price": 4,
+        "name": "Frozen Fanta® Blue Raspberry",
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7959_MediumFrozenFantaBlueRaspberry_Glass_1564x1564?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "Small",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7959_MediumFrozenFantaBlueRaspberry_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 4,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7959_MediumFrozenFantaBlueRaspberry_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 5,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7959_MediumFrozenFantaBlueRaspberry_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "category": "Beverages",
+        "price": 4,
+        "name": "Frozen Coca-Cola® Classic",
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7963_MediumFrozenCocaColaClassic_Glass_1564x1564?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "Small",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7963_MediumFrozenCocaColaClassic_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 4,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7963_MediumFrozenCocaColaClassic_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 5,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202301_7963_MediumFrozenCocaColaClassic_Glass_1564x1564?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "category": "Beverages",
+        "price": 4,
+        "name": "Strawberry Banana Smoothie",
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_201906_2725_MediumStrawberryBananaSmoothie_Glass_A1_1564x1564?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "Small",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_201906_2725_MediumStrawberryBananaSmoothie_Glass_A1_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 4,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_201906_2725_MediumStrawberryBananaSmoothie_Glass_A1_1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Large",
+                "price": 5,
+                "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_201906_2725_MediumStrawberryBananaSmoothie_Glass_A1_1564x1564?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "category": "Desserts",
+        "price": 1.50,
+        "name": "Vanilla Cone",
+        "image": "https://s7d1.scene7.com/is/image/mcdonaldsstage/DC_202106_0336_LargeVanillaCone_1564x1564?wid=1000&hei=1000&dpr=off"
+    },
+    {
+        "id": 20,
+        "category": "Desserts",
+        "price": 3.50,
+        "name": "McFlurry® with OREO® Cookies",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202002_3832_OREOMcFlurry_1564x1564-1?wid=1000&hei=1000&dpr=off",
+        "variant": [
+            {
+                "size": "Mini",
+                "price": 1.80,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202408_25066_OREOMcFlurry_Mini_v1564x1564?wid=1000&hei=1000&dpr=off"
+            },
+            {
+                "size": "Medium",
+                "price": 3.50,
+                "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202002_3832_OREOMcFlurry_1564x1564-1?wid=1000&hei=1000&dpr=off"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "category": "Desserts",
+        "price": 3,
+        "name": "Chocolate Chip Cookie",
+        "image": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202211_1852_ChocolateChipCookie_Upright_1564x1564-1?wid=1000&hei=1000&dpr=off"
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "nome": "McDonald's Chicago Flagship",
+        "città": "Chicago",
+        "indirizzo": "600 N Clark St, Chicago, IL 60610, USA",
+        "lat": 41.892873,
+        "lng": -87.636424
+    },
+    {
+        "nome": "McDonald's New York Times Square",
+        "città": "New York",
+        "indirizzo": "1600 Broadway, New York, NY 10019, USA",
+        "lat": 40.759011,
+        "lng": -73.984472
+    },
+    {
+        "nome": "McDonald's London Leicester Square",
+        "città": "London",
+        "indirizzo": "68-70 Leicester Square, London WC2H 7DE, UK",
+        "lat": 51.510280,
+        "lng": -0.131950
+    },
+    {
+        "nome": "McDonald's Paris Champs-Élysées",
+        "città": "Paris",
+        "indirizzo": "140 Avenue des Champs-Élysées, 75008 Paris, France",
+        "lat": 48.870970,
+        "lng": 2.305980
+    },
+    {
+        "nome": "McDonald's Sydney CBD",
+        "città": "Sydney",
+        "indirizzo": "169 Pitt St, Sydney NSW 2000, Australia",
+        "lat": -33.873650,
+        "lng": 151.206889
+    },
+    {
+        "nome": "McDonald's Tokyo Shibuya",
+        "città": "Tokyo",
+        "indirizzo": "24-1 Udagawacho, Shibuya City, Tokyo 150-0042, Japan",
+        "lat": 35.659108,
+        "lng": 139.700399
+    },
+    {
+        "nome": "McDonald's Berlin Alexanderplatz",
+        "città": "Berlin",
+        "indirizzo": "Alexanderplatz 7, 10178 Berlin, Germany",
+        "lat": 52.521918,
+        "lng": 13.413215
+    },
+    {
+        "nome": "McDonald's Dubai Mall",
+        "città": "Dubai",
+        "indirizzo": "Dubai Mall, Downtown Dubai, UAE",
+        "lat": 25.197525,
+        "lng": 55.279618
+    },
+    {
+        "nome": "McDonald's Toronto Eaton Centre",
+        "città": "Toronto",
+        "indirizzo": "220 Yonge St, Toronto, ON M5B 2H1, Canada",
+        "lat": 43.654260,
+        "lng": -79.380933
+    },
+    {
+        "nome": "McDonald's São Paulo Paulista",
+        "città": "São Paulo",
+        "indirizzo": "Av. Paulista, 901 - Bela Vista, São Paulo - SP, Brazil",
+        "lat": -23.564122,
+        "lng": -46.653159
+    }
+]

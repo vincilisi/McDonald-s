@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer testo {
+    .myText {
+        text-align: center;
+        font-size: 3rem;
+        color: rgb(255, 204, 0);
+        text-shadow: 2px 2px rgb(178, 15, 15);
+        margin: 1rem 0;
+    }
+}

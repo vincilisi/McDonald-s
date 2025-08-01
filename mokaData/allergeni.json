@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "category": "Frutta a guscio",
+        "name": "arachidi"
+    },
+    {
+        "id": 2,
+        "category": "Frutta a guscio",
+        "name": "nocciole"
+    },
+    {
+        "id": 3,
+        "category": "Frutta a guscio",
+        "name": "pistacchi"
+    },
+    {
+        "id": 4,
+        "category": "Crostacei",
+        "name": "gamberi"
+    },
+    {
+        "id": 5,
+        "category": "Crostacei",
+        "name": "granchio"
+    },
+    {
+        "id": 6,
+        "category": "Crostacei",
+        "name": "cannocchie"
+    },
+    {
+        "id": 7,
+        "category": "Latte",
+        "name": "yogurt"
+    },
+    {
+        "id": 8,
+        "category": "Latte",
+        "name": "creme varie"
+    },
+    {
+        "id": 9,
+        "category": "Latte",
+        "name": "latte"
+    }
+]
