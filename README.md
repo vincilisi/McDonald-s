@@ -1,12 +1,47 @@
-# React + Vite
+# 🍔 McDonald's 2025 - Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Benvenuto nel progetto *McDonald's 2025*, una web app moderna costruita con **React + Vite**. L'obiettivo è simulare un'interfaccia per un sistema di gestione ordini e interazione utente per un fast food, sfruttando tecnologie attuali come **Tailwind CSS** e **Firebase**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologie utilizzate
 
-## Expanding the ESLint configuration
+- **React** – per la costruzione dinamica dell'interfaccia
+- **Vite** – ambiente di sviluppo veloce e modulare
+- **Tailwind CSS** – stile responsive e flessibile
+- **Firebase** – hosting, database NoSQL e autenticazione (se presente)
+- **ESLint** – controllo della qualità del codice
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Struttura del progetto
+
+- `src/` – componenti React, logica, configurazioni
+- `public/` – file statici e risorse pubbliche
+- `firebase-config.js` – connessione e setup Firebase
+- `vite.config.js` – configurazione dell’ambiente Vite
+
+---
+
+## 📸 Demo
+
+Puoi vedere il progetto online qui:  
+🌐 [https://mcdonald-s-2025.web.app](https://mcdonald-s-2025.web.app)
+
+---
+
+## 🧪 Come avviare il progetto in locale
+
+```bash
+# Clona il repository
+git clone https://github.com/vincilisi/McDonald-s
+
+# Entra nella cartella del progetto
+cd McDonald-s
+
+# Installa le dipendenze
+npm install
+
+# Avvia il server locale
+npm run dev
+
