@@ -136,7 +136,7 @@ const Account = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex gap-2">
+                <div className="flex gap-2 text-black">
                     <input
                         type="text"
                         placeholder="Nome"
@@ -160,7 +160,7 @@ const Account = () => {
                     placeholder="Indirizzo di consegna"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded text-black"
                     required
                 />
 
@@ -169,7 +169,7 @@ const Account = () => {
                     placeholder="Telefono"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded text-black"
                 />
 
                 <label className="font-semibold text-gray-700 mt-4 block">
@@ -177,32 +177,32 @@ const Account = () => {
                 </label>
                 <AvatarSelect />
 
-                <label className="font-semibold text-gray-700 mt-2 block">
+                <label className="font-semibold text-gray-700 mt-2 block text-black">
                     Preferenze alimentari:
                 </label>
                 <select
                     value={diet}
                     onChange={(e) => setDiet(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
+                    className="w-full p-2 border border-gray-300 rounded text-black"
                 >
-                    <option value="">Nessuna</option>
-                    <option value="vegetariano">Vegetariano</option>
-                    <option value="vegano">Vegano</option>
-                    <option value="senza-glutine">Senza glutine</option>
-                    <option value="altro">Altro</option>
+                    <option className="text-black" value="">Nessuna</option>
+                    <option className="text-black" value="vegetariano">Vegetariano</option>
+                    <option className="text-black" value="vegano">Vegano</option>
+                    <option className="text-black" value="senza-glutine">Senza glutine</option>
+                    <option className="text-black" value="altro">Altro</option>
                 </select>
 
                 <textarea
                     placeholder="Note aggiuntive (es. allergie, preferenze...)"
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded min-h-[80px]"
+                    className="w-full p-2 border border-gray-300 rounded min-h-[80px] text-black"
                 />
 
                 <button
                     type="submit"
                     disabled={saving}
-                    className="w-full px-4 py-2 bg-mcdYellow text-black font-bold rounded hover:bg-mcdRed hover:text-white transition"
+                    className="w-full px-4 py-2 bg-mcdYellow text-black font-bold rounded hover:bg-mcdRed hover:text-red-500 transition"
                 >
                     {saving ? "Salvataggio in corso..." : "Salva Profilo"}
                 </button>

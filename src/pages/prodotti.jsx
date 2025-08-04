@@ -1,7 +1,8 @@
+import React from "react";
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SectionCards from "../components/card";
-import prodotti from "../../mockData/prodotti.json";
+import prodotti from "../../mokaData/prodotti.json";
 import categorySelection from "../utils/categori-selection";
 
 const categories = [

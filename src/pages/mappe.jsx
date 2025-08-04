@@ -1,214 +1,84 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { updateProfile } from "../features/users/userSlice";
+import React, { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+import useFetch from '../utils/CustomHook/useFetch';
 
-const Account = () => {
-    const dispatch = useDispatch();
-    const {
-        name: savedName,
-        avatar: savedAvatar,
-        isProfileComplete,
-        uid,
-        status,
-        error,
-        address: savedAddress,
-        phone: savedPhone,
-        diet: savedDiet,
-        notes: savedNotes,
-    } = useSelector((state) => state.user);
-
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("");
-    const [avatar, setAvatar] = useState("");
-    const [diet, setDiet] = useState("");
-    const [notes, setNotes] = useState("");
-    const [saving, setSaving] = useState(false);
-    const [isEditing, setIsEditing] = useState(!isProfileComplete);
+const FlyToLocation = ({ location }) => {
+    const map = useMap();
 
     useEffect(() => {
-        if (!uid) return;
-        if (savedName) {
-            const parts = savedName.split(" ");
-            setName(parts[0] || "");
-            setSurname(parts.slice(1).join(" ") || "");
+        if (location) {
+            map.flyTo([location.lat, location.lng], 15, { duration: 2 });
+        } else {
+            map.flyTo([20, 0], 2, { duration: 2 });
         }
-        if (savedAvatar) setAvatar(savedAvatar);
-        if (savedAddress) setAddress(savedAddress);
-        if (savedPhone) setPhone(savedPhone);
-        if (savedDiet) setDiet(savedDiet);
-        if (savedNotes) setNotes(savedNotes);
-    }, [
-        uid,
-        savedName,
-        savedAvatar,
-        savedAddress,
-        savedPhone,
-        savedDiet,
-        savedNotes,
-    ]);
+    }, [location, map]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (saving) return;
-        if (!uid) return alert("UID mancante");
+    return null;
+};
 
-        setSaving(true);
+const Mappe = () => {
+    const { data: locations, loading, error } = useFetch('/mappe/mappe.json');
+    const [selectedLocation, setSelectedLocation] = useState(null);
 
-        const profile = {
-            name: `${name} ${surname}`.trim(),
-            avatar,
-            isProfileComplete: true,
-            uid,
-            address,
-            phone,
-            diet,
-            notes,
-        };
+    const markerIcon = new L.Icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+        shadowSize: [41, 41],
+    });
 
-        try {
-            await dispatch(updateProfile(profile)).unwrap();
-            alert("Profilo salvato con successo!");
-            setIsEditing(false);
-        } catch (err) {
-            alert("Errore salvataggio: " + err);
-        } finally {
-            setSaving(false);
-        }
-    };
-
-    const avatarList = ["aletta.jpg", "fish.jpg", "patatine.jpg"];
-
-    const AvatarSelect = () => (
-        <div className="flex gap-4 justify-center mb-4">
-            {avatarList.map((img, i) => (
-                <img
-                    key={i}
-                    src={`/avatars/${img}`}
-                    alt={`Avatar ${i + 1}`}
-                    onClick={() => setAvatar(`/avatars/${img}`)}
-                    className={`w-16 h-16 rounded-full object-cover cursor-pointer border-4 ${avatar === `/avatars/${img}`
-                        ? "border-mcdYellow"
-                        : "border-gray-400"
-                        }`}
-                />
-            ))}
-        </div>
-    );
-
-    if (!isEditing) {
-        return (
-            <div className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-xl shadow-md text-gray-800 font-sans">
-                <h2 className="text-2xl font-bold text-center mb-4">Il tuo profilo</h2>
-                <div className="space-y-2">
-                    <p><strong>Nome:</strong> {name} {surname}</p>
-                    <p><strong>Indirizzo:</strong> {address}</p>
-                    <p><strong>Telefono:</strong> {phone || "Non fornito"}</p>
-                    <p><strong>Avatar:</strong></p>
-                    <img src={avatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-mcdYellow mb-2" />
-                    <p><strong>Preferenze alimentari:</strong> {diet || "Nessuna"}</p>
-                    <p><strong>Note aggiuntive:</strong> {notes || "Nessuna"}</p>
-                </div>
-                <button
-                    onClick={() => setIsEditing(true)}
-                    className="mt-6 w-full px-4 py-2 bg-mcdYellow text-black rounded font-bold hover:bg-mcdRed hover:text-white transition"
-                >
-                    Modifica dati
-                </button>
-            </div>
-        );
-    }
+    if (loading) return <p className="text-center text-lg py-6">Caricamento in corso...</p>;
+    if (error) return <p className="text-center text-red-600 text-lg py-6">Errore: {error}</p>;
 
     return (
-        <div className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-xl shadow-md font-sans">
-            <h2 className="text-2xl font-bold text-center mb-4">
-                Completa il tuo profilo
-            </h2>
+        <div className="flex flex-col lg:flex-row gap-6 p-4 bg-white shadow-md rounded-md">
+            <div className="lg:w-1/3 space-y-4">
+                <h2 className="text-2xl font-bold text-mcdRed">McDonald's nel mondo</h2>
+                <ul className="space-y-2">
+                    {locations && locations.map((loc, i) => (
+                        <li key={i}>
+                            <button
+                                className="bg-mcdYellow text-black px-4 py-2 rounded hover:bg-yellow-400 transition"
+                                onClick={() => setSelectedLocation(loc)}
+                            >
+                                {loc.nome} – {loc.città}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
-            {status === "failed" && (
-                <p className="text-red-600 text-center mb-2">Errore: {error}</p>
-            )}
-            {saving && (
-                <p className="text-gray-500 italic text-center mb-2">
-                    Salvataggio in corso...
-                </p>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex gap-2">
-                    <input
-                        type="text"
-                        placeholder="Nome"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="flex-1 p-2 border border-gray-300 rounded"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Cognome"
-                        value={surname}
-                        onChange={(e) => setSurname(e.target.value)}
-                        className="flex-1 p-2 border border-gray-300 rounded"
-                        required
-                    />
-                </div>
-
-                <input
-                    type="text"
-                    placeholder="Indirizzo di consegna"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
-                    required
-                />
-
-                <input
-                    type="tel"
-                    placeholder="Telefono"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
-                />
-
-                <label className="font-semibold text-gray-700 mt-4 block">
-                    Scegli avatar:
-                </label>
-                <AvatarSelect />
-
-                <label className="font-semibold text-gray-700 mt-2 block">
-                    Preferenze alimentari:
-                </label>
-                <select
-                    value={diet}
-                    onChange={(e) => setDiet(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded"
+            <div className="lg:w-2/3">
+                <MapContainer
+                    center={[20, 0]}
+                    zoom={2}
+                    scrollWheelZoom={true}
+                    style={{ height: '450px', width: '100%' }}
+                    className="rounded overflow-hidden"
                 >
-                    <option value="">Nessuna</option>
-                    <option value="vegetariano">Vegetariano</option>
-                    <option value="vegano">Vegano</option>
-                    <option value="senza-glutine">Senza glutine</option>
-                    <option value="altro">Altro</option>
-                </select>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
 
-                <textarea
-                    placeholder="Note aggiuntive (es. allergie, preferenze...)"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded min-h-[80px]"
-                />
+                    {selectedLocation && (
+                        <Marker
+                            position={[selectedLocation.lat, selectedLocation.lng]}
+                            icon={markerIcon}
+                        >
+                            <Popup>{selectedLocation.nome} – {selectedLocation.città}</Popup>
+                        </Marker>
+                    )}
 
-                <button
-                    type="submit"
-                    disabled={saving}
-                    className="w-full px-4 py-2 bg-mcdYellow text-black font-bold rounded hover:bg-mcdRed hover:text-white transition"
-                >
-                    {saving ? "Salvataggio in corso..." : "Salva Profilo"}
-                </button>
-            </form>
+                    <FlyToLocation location={selectedLocation} />
+                </MapContainer>
+            </div>
         </div>
     );
 };
 
-export default Account;
+export default Mappe;

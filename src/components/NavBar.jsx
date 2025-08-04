@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import McImg from "../assets/media/mc.png";
 import SearchButtonWithInput from "./search";
-import CartLogin from "./cart-login";
+import CartLogin from "./cart";
 import { useAuth } from "../context/AuthContext";
 import { useSelector } from "react-redux";
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-mcdBlack text-white px-8 py-3 flex items-center justify-between flex-wrap relative">
+        <nav className="bg-[#d90007] text-white px-8 py-3 flex items-center justify-between flex-wrap relative">
             <div className="flex-shrink-0 mr-auto">
                 <Link to="/">
                     <img className="w-20 h-auto" src={McImg} alt="logo" />

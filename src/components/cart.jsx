@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { useContext, useEffect, useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
 import { CartContext } from "./layout";
-import Popup from "./Popup";
+import Popup from "./pop-up";
 
 const CartLogin = () => {
     const [showCart, setShowCart] = useState(false);

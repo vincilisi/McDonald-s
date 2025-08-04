@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./index.css"
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout.jsx";
 import Allergeni from "./pages/allergeni.jsx";

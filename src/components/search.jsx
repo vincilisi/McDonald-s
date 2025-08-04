@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState, useRef, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

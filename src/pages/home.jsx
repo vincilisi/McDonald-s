@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaReact } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import FireImg from "../assets/media/firebase.png";
@@ -5,6 +6,7 @@ import ReactImg from "../assets/media/react.png";
 import HtmlImg from "../assets/media/html.jpg";
 import CssImg from "../assets/media/css.jpg";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+
 
 const HomePages = () => {
     const [spon, SetSponsor] = useState(0);
@@ -21,12 +23,12 @@ const HomePages = () => {
     const handlePrev = () => SetSponsor((prev) => (prev - 1 + sponsors.length) % sponsors.length);
 
     return (
+
         <div className="px-6 py-10 max-w-6xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-mcdYellow mb-4">Home Page</h1>
             <h2 className="text-xl text-white mb-8">
                 A smile with every bite. McDonald's: the taste that makes you happy.
             </h2>
-
             {/* Location and Hours */}
             <div className="flex flex-col lg:flex-row gap-8 justify-center items-start mb-12">
                 <div className="lg:w-1/2">
@@ -67,24 +69,24 @@ const HomePages = () => {
             {/* Technologies */}
             <h3 className="text-2xl font-semibold text-mcdYellow mb-6">Tecnologie usate</h3>
 
-            {/* Carousel */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-                <button onClick={handlePrev} className="text-white text-2xl hover:text-mcdYellow">
+            <div className="flex items-center justify-center gap-6 mb-8">
+                <button onClick={handlePrev} className="text-white text-3xl hover:text-mcdYellow">
                     <MdArrowBackIos />
                 </button>
 
-                <div className="w-40 h-40 flex items-center justify-center border border-white rounded overflow-hidden">
-                    <img src={sponsors[spon].img} alt={`Sponsor ${spon + 1}`} className="max-w-full max-h-full" />
+                <div className="w-[500px] h-[200px] flex items-center justify-center border border-white rounded-xl overflow-hidden shadow-lg bg-white">
+                    <img
+                        src={sponsors[spon].img}
+                        alt={`Sponsor ${spon + 1}`}
+                        className="max-w-full max-h-full object-contain"
+                    />
                 </div>
 
-                <button onClick={handleNext} className="text-white text-2xl hover:text-mcdYellow">
+                <button onClick={handleNext} className="text-white text-3xl hover:text-mcdYellow">
                     <MdArrowForwardIos />
                 </button>
             </div>
 
-            <p className="text-white text-base">
-                Questo progetto è ora responsive, realizzato per scopi formativi con React
-            </p>
         </div>
     );
 };
