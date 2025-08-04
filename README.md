@@ -45,3 +45,49 @@ npm install
 # Avvia il server locale
 npm run dev
 
+# 🍔 McDonald's 2025 - Web App
+
+Welcome to the *McDonald's 2025* project — a modern web application built with **React + Vite**. The goal is to simulate an interface for a fast food order management system, leveraging current technologies like **Tailwind CSS** and **Firebase**.
+
+---
+
+## 🚀 Technologies Used
+
+- **React** – for dynamic UI construction
+- **Vite** – fast and modular development environment
+- **Tailwind CSS** – responsive and flexible styling
+- **Firebase** – hosting, NoSQL database, and authentication (if implemented)
+- **ESLint** – code quality and consistency enforcement
+
+---
+
+## 📁 Project Structure
+
+- `src/` – React components, logic, configurations
+- `public/` – static files and public assets
+- `firebase-config.js` – Firebase setup and connection
+- `vite.config.js` – Vite environment configuration
+
+---
+
+## 📸 Demo
+
+You can check out the live project here:  
+🌐 [https://mcdonald-s-2025.web.app](https://mcdonald-s-2025.web.app)
+
+---
+
+## 🧪 How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/vincilisi/McDonald-s
+
+# Navigate into the project folder
+cd McDonald-s
+
+# Install dependencies
+npm install
+
+# Start the local server
+npm run dev
