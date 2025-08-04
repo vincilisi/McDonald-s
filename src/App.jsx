@@ -11,7 +11,9 @@ import Login from "./pages/login.jsx";
 import PrivateRoute from "./components/PrivateRote.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import Mappe from "./pages/mappe.jsx";
-import Account from "./pages/Account.jsx";
+import Account from "./pages/account.jsx"
+import AuthListener from "./features/users/AuthListener.jsx";
+import Acquisto from "./pages/acquisto.jsx";
 
 const routes = createBrowserRouter([
   { path: "/", element: <IntroPage /> },
@@ -36,7 +38,8 @@ const routes = createBrowserRouter([
             ],
           },
           { path: "mappe", element: <Mappe /> },
-          { path: "account", element: <Account /> }
+          { path: "account", element: <Account /> },
+          { path: "acquisto", element: <Acquisto /> }
         ],
       },
     ],
@@ -46,6 +49,7 @@ const routes = createBrowserRouter([
 function App() {
   return (
     <AuthProvider>
+      <AuthListener />
       <RouterProvider router={routes} />
     </AuthProvider>
   );

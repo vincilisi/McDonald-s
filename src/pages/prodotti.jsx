@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import SectionCards from "../components/card";
 import prodotti from "../../mokaData/prodotti.json";
 import categorySelection from "../utils/categori-selection";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 
 const categories = [
     {
@@ -23,7 +25,9 @@ const categories = [
     }
 ];
 
+
 const Prodotti = () => {
+
     const { name } = useParams();
     const [searchParams] = useSearchParams();
     const query = searchParams.get("query")?.toLowerCase() || "";

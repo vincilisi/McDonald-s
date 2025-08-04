@@ -25,7 +25,8 @@ const Account = () => {
     const [diet, setDiet] = useState("");
     const [notes, setNotes] = useState("");
     const [saving, setSaving] = useState(false);
-    const [isEditing, setIsEditing] = useState(!isProfileComplete);
+    const [isEditing, setIsEditing] = useState(false);
+    const [animateForm, setAnimateForm] = useState(false);
 
     useEffect(() => {
         if (!uid) return;
@@ -39,6 +40,7 @@ const Account = () => {
         if (savedPhone) setPhone(savedPhone);
         if (savedDiet) setDiet(savedDiet);
         if (savedNotes) setNotes(savedNotes);
+        setIsEditing(!isProfileComplete);
     }, [
         uid,
         savedName,
@@ -47,12 +49,16 @@ const Account = () => {
         savedPhone,
         savedDiet,
         savedNotes,
+        isProfileComplete,
     ]);
+
+    useEffect(() => {
+        if (isEditing) setAnimateForm(true);
+    }, [isEditing]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (saving) return;
-        if (!uid) return alert("UID mancante");
+        if (saving || !uid) return;
 
         setSaving(true);
 
@@ -97,18 +103,51 @@ const Account = () => {
         </div>
     );
 
+    if (!uid) {
+        return (
+            <div className="pt-24 text-center text-gray-500 italic">
+                Caricamento in corso...
+            </div>
+        );
+    }
+
     if (!isEditing) {
         return (
-            <div className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-xl shadow-md text-gray-800 font-sans">
-                <h2 className="text-2xl font-bold text-center mb-4">Il tuo profilo</h2>
-                <div className="space-y-2">
-                    <p><strong>Nome:</strong> {name} {surname}</p>
-                    <p><strong>Indirizzo:</strong> {address}</p>
-                    <p><strong>Telefono:</strong> {phone || "Non fornito"}</p>
-                    <p><strong>Avatar:</strong></p>
-                    <img src={avatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-mcdYellow mb-2" />
-                    <p><strong>Preferenze alimentari:</strong> {diet || "Nessuna"}</p>
-                    <p><strong>Note aggiuntive:</strong> {notes || "Nessuna"}</p>
+            <div className="max-w-lg mx-auto p-6 pt-24 bg-white rounded-xl shadow-md font-sans">
+                <h2 className="text-2xl font-bold text-center mb-4 text-mcdBlack">
+                    Il tuo profilo
+                </h2>
+                <div className="space-y-2 text-black">
+                    <p>
+                        <strong>Nome:</strong> {name} {surname}
+                    </p>
+                    <p>
+                        <strong>Indirizzo:</strong> {address}
+                    </p>
+                    <p>
+                        <strong>Telefono:</strong> {phone || "Non fornito"}
+                    </p>
+                    <p>
+                        <strong>Avatar:</strong>
+                    </p>
+                    {avatar ? (
+                        <img
+                            src={avatar}
+                            alt="Avatar"
+                            className="w-20 h-20 rounded-full object-cover border-2 border-mcdYellow mb-2"
+                        />
+                    ) : (
+                        <div className="w-20 h-20 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center mb-2 text-sm text-gray-500">
+                            Nessun avatar
+                        </div>
+                    )}
+
+                    <p>
+                        <strong>Preferenze alimentari:</strong> {diet || "Nessuna"}
+                    </p>
+                    <p>
+                        <strong>Note aggiuntive:</strong> {notes || "Nessuna"}
+                    </p>
                 </div>
                 <button
                     onClick={() => setIsEditing(true)}
@@ -121,8 +160,11 @@ const Account = () => {
     }
 
     return (
-        <div className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-xl shadow-md font-sans">
-            <h2 className="text-2xl font-bold text-center mb-4">
+        <div
+            className={`max-w-lg mx-auto p-6 bg-white rounded-xl shadow-md font-sans transition-all duration-700 ease-out ${animateForm ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+        >
+            <h2 className="text-2xl font-bold text-center mb-4 text-mcdBlack">
                 Completa il tuo profilo
             </h2>
 
@@ -135,8 +177,8 @@ const Account = () => {
                 </p>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex gap-2 text-black">
+            <form onSubmit={handleSubmit} className="space-y-4 text-black">
+                <div className="flex gap-2">
                     <input
                         type="text"
                         placeholder="Nome"
@@ -160,7 +202,7 @@ const Account = () => {
                     placeholder="Indirizzo di consegna"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded text-black"
+                    className="w-full p-2 border border-gray-300 rounded"
                     required
                 />
 
@@ -169,7 +211,7 @@ const Account = () => {
                     placeholder="Telefono"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded text-black"
+                    className="w-full p-2 border border-gray-300 rounded"
                 />
 
                 <label className="font-semibold text-gray-700 mt-4 block">
@@ -177,32 +219,32 @@ const Account = () => {
                 </label>
                 <AvatarSelect />
 
-                <label className="font-semibold text-gray-700 mt-2 block text-black">
+                <label className="font-semibold text-gray-700 mt-2 block">
                     Preferenze alimentari:
                 </label>
                 <select
                     value={diet}
                     onChange={(e) => setDiet(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded text-black"
+                    className="w-full p-2 border border-gray-300 rounded"
                 >
-                    <option className="text-black" value="">Nessuna</option>
-                    <option className="text-black" value="vegetariano">Vegetariano</option>
-                    <option className="text-black" value="vegano">Vegano</option>
-                    <option className="text-black" value="senza-glutine">Senza glutine</option>
-                    <option className="text-black" value="altro">Altro</option>
+                    <option value="">Nessuna</option>
+                    <option value="vegetariano">Vegetariano</option>
+                    <option value="vegano">Vegano</option>
+                    <option value="senza-glutine">Senza glutine</option>
+                    <option value="altro">Altro</option>
                 </select>
 
                 <textarea
                     placeholder="Note aggiuntive (es. allergie, preferenze...)"
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded min-h-[80px] text-black"
+                    className="w-full p-2 border border-gray-300 rounded min-h-[80px]"
                 />
 
                 <button
                     type="submit"
                     disabled={saving}
-                    className="w-full px-4 py-2 bg-mcdYellow text-black font-bold rounded hover:bg-mcdRed hover:text-red-500 transition"
+                    className="w-full px-4 py-2 bg-mcdYellow text-black font-bold rounded hover:bg-mcdRed hover:text-white transition"
                 >
                     {saving ? "Salvataggio in corso..." : "Salva Profilo"}
                 </button>

@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 import { TiShoppingCart } from "react-icons/ti";
-import { CartContext } from "./layout";
 
 const Tile = ({ id, img, title, price, variant = [] }) => {
+    const dispatch = useDispatch();
     const [selectedVariant, setSelectedVariant] = useState(variant[0] || null);
-    const { addToCart } = useContext(CartContext);
 
     const displayedImage = selectedVariant?.image || img || "";
     const displayedPrice = selectedVariant?.price ?? price ?? 0;
@@ -14,15 +15,16 @@ const Tile = ({ id, img, title, price, variant = [] }) => {
 
     const handleAddToCart = (e) => {
         e.stopPropagation();
-        const item = {
-            id,
-            name: title,
-            image: displayedImage,
-            price: displayedPrice,
-            size: displayedSize || "default",
-            quantity: 1
-        };
-        addToCart(item);
+        dispatch(
+            addToCart({
+                id,
+                name: title,
+                image: displayedImage,
+                price: displayedPrice,
+                size: displayedSize || "default",
+                quantity: 1,
+            })
+        );
     };
 
     return (

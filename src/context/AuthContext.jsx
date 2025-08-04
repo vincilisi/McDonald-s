@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from "../../firebase-config";
+import { app } from "../../firebase-config";
 
 import { useDispatch } from "react-redux";
 import { login, logout } from "../features/users/userSlice";
